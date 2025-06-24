@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>View Answers</title></head>
+<body>
+<h2>Answers for Paper</h2>
+<a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+<ul>
+    {% for ans in answers %}
+    <li>User ID: {{ ans.user_id }} - <a href="{{ url_for('download_file', filename=ans.filename) }}">View Answer Photo</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>

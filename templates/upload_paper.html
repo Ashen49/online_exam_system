@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Upload Paper</title></head>
+<body>
+<h2>Upload Paper</h2>
+<form method="POST" enctype="multipart/form-data">
+    Title: <input type="text" name="title" required><br>
+    PDF File: <input type="file" name="file" accept=".pdf" required><br>
+    <button type="submit">Upload</button>
+</form>
+<a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

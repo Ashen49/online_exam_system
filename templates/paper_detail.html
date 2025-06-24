@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>{{ paper.title }}</title></head>
+<body>
+<h2>{{ paper.title }}</h2>
+<object data="{{ url_for('download_file', filename=paper.filename) }}" type="application/pdf" width="800" height="600">
+    <p>Your browser does not support PDFs. <a href="{{ url_for('download_file', filename=paper.filename) }}">Download PDF</a>.</p>
+</object>
+
+<h3>Upload your answers (photos):</h3>
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="answers" accept="image/*" multiple required><br>
+    <button type="submit">Submit Answers</button>
+</form>
+<a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>
